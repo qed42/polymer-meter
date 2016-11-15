@@ -1,6 +1,21 @@
 {
   "name": "polymer-meter",
   "description": "This is a polymer element to indicate the amount of article still left for reading.",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "zoomove"
+  ],
+  "version": "1.0.1",
+  "authors": [
+    "Kumar, Saket <saki007ster@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test"
+  ],
   "main": "polymer-meter.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
