@@ -1,0 +1,109 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="reading.js"></script>
+<!--
+`polymer-meter`
+This is a polymer element to indicate the amount of article still left for reading.
+
+Example:
+
+    <polymer-meter></polymer-meter>
+
+Place this element at the top your page, it will watch the length of the page and at the top it will
+display a indicator show how much of the page you have already covered.
+
+You may not insert any custom DOM inside of this indicator element.
+
+### Styling
+You can control the color of the indicator using css property '--progress-meter-color'
+
+Example:
+
+    polymer-meter{
+      --progress-meter-color: red;
+    }
+
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--progress-meter-color` | Background color of the progress indicator | `green`
+
+@demo demo/index.html
+-->
+
+<dom-module id="polymer-meter">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      /* Progress bar indicator css */
+      progress {
+        /* Positioning */
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99999;
+        /* Dimensions */
+        width: 100%;
+        height: .25em;
+
+        /* Reset the apperance */
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+
+        /* Get rid of the default border in Firefox/Opera. */
+        border: none;
+
+        /* For Firefox/IE10+ */
+        background-color: transparent;
+
+        /* For IE10+, color of the progress bar */
+        color: transparent;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: transparent;
+      }
+
+      .flat::-webkit-progress-value {
+        background-color: var(--progress-meter-color);
+      }
+
+      .flat::-moz-progress-bar {
+        background-color: var(--progress-meter-color);
+      }
+      .progress-container {
+        width: 100%;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: .25em;
+        display: block;
+        z-index: 99999;
+      }
+
+      .progress-bar {
+        background-color: var(--progress-meter-color);
+        width: 50%;
+        display: block;
+        height: inherit;
+      }
+
+    </style>
+    <progress value="0" id="progressBar" class="flat">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'polymer-meter',
+    });
+  </script>
+</dom-module>
