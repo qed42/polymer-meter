@@ -7,13 +7,13 @@ This is a polymer element to indicate the amount of article still left for readi
 Install this using bower
 
 ```
-$ bower install polymer-bg --save-dev
+$ bower install polymer-meter --save-dev
 ```
 
 Add the element element using html imports
 
 ```
-<link rel="import" href="../polymer-bg.html">
+<link rel="import" href="../polymer-meter.html">
 ```
 
 Example:
